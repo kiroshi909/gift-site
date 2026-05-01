@@ -76,7 +76,7 @@ const storageKey = "pink-love-gift-site";
 let state = loadState();
 const mode = "editor";
 const isEditor = mode === "editor";
-const isServerMode = location.protocol === "http:" || location.protocol === "https:";
+
 let needsInitialSave = false;
 
 state.decorations = state.decorations.filter((decor) => {
