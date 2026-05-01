@@ -74,7 +74,7 @@ const defaults = {
 const storageKey = "pink-love-gift-site";
 
 let state = loadState();
-const mode = document.body.dataset.mode || "editor";
+
 const isEditor = mode === "editor";
 const isServerMode = location.protocol === "http:" || location.protocol === "https:";
 let needsInitialSave = false;
