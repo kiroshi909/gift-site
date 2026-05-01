@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Pink Love Story</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-mode="editor">
+    <div class="sparkles" aria-hidden="true"></div>
+    <div class="background-decor" id="backgroundDecor" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Our Pink Love Story">
+        <span class="brand-mark">♡</span>
+        <span data-text="brand">Pink Love</span>
+      </a>
+      <nav class="nav" aria-label="Навигация">
+        <a href="#letter" data-text="navLetter">Письмо</a>
+        <a href="#gallery" data-text="navGallery">Фото</a>
+        <a href="#moments" data-text="navMoments">Моменты</a>
+        <a href="./view.html" data-text="navReady">Готовый сайт</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow" data-text="heroKicker">for the sweetest person</p>
+          <h1>
+            <span data-field="heroTitle">Наша маленькая история любви</span>
+          </h1>
+          <p class="hero-text" data-field="heroText">
+            Здесь будут красивые фото, нежное письмо и наши самые теплые моменты.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#letter" data-text="primaryButton">Открыть письмо</a>
+            <a class="button ghost" href="#gallery" data-text="secondaryButton">Посмотреть фото</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Милый розовый талисман">
+          <div class="mascot-card">
+            <img class="hero-photo" src="./assets/decor/hero-photo.jpg" alt="Наше фото" />
+            <p data-text="mascotCaption">made with love</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="editor-panel" aria-label="Настройки сайта">
+        <div>
+          <p class="section-kicker">редактор</p>
+          <h2>Меняй весь текст и фон</h2>
+        </div>
+        <div class="editor-grid">
+          <label>
+            Заголовок
+            <input id="heroTitleInput" type="text" maxlength="70" />
+          </label>
+          <label>
+            Подзаголовок
+            <input id="heroTextInput" type="text" maxlength="140" />
+          </label>
+          <div class="text-control-list" id="textControls"></div>
+          <div class="background-tools">
+            <div>
+              <p class="mini-title">Фоновые картинки</p>
+              <p class="mini-copy">Загрузи картинку, потом перетащи ее по странице. Размер меняется после выбора картинки.</p>
+            </div>
+            <div class="upload-row">
+              <label class="upload-button">
+                Добавить фон
+                <input id="decorInput" type="file" accept="image/*,.heic,.heif" multiple />
+              </label>
+              <button class="button soft" id="deleteDecor" type="button">Удалить выбранное</button>
+              <button class="button soft" id="clearDecor" type="button">Очистить фон</button>
+            </div>
+            <label class="size-control">
+              Размер выбранной картинки
+              <input id="decorSize" type="range" min="80" max="520" step="10" />
+            </label>
+          </div>
+          <div class="editor-actions">
+            <a class="button ghost" href="./view.html">Посмотреть готовый сайт</a>
+            <button class="button primary" id="downloadSite" type="button">Скачать готовую страницу</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="letter-section" id="letter">
+        <div class="section-heading">
+          <p class="section-kicker" data-text="letterKicker">love letter</p>
+          <h2 data-text="letterTitle">Письмо для неё</h2>
+        </div>
+        <div class="letter-card">
+          <textarea id="letterInput" aria-label="Текст письма"></textarea>
+          <article class="letter-preview">
+            <p id="letterPreview"></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="gallery">
+        <div class="section-heading">
+          <p class="section-kicker" data-text="galleryKicker">photo memories</p>
+          <h2 data-text="galleryTitle">Красивые фото</h2>
+        </div>
+        <div class="upload-row">
+          <label class="upload-button">
+            <span data-text="uploadPhotoButton">Загрузить фото</span>
+            <input id="photoInput" type="file" accept="image/*,.heic,.heif" multiple />
+          </label>
+          <button class="button soft" id="clearPhotos" type="button" data-text="clearPhotosButton">Очистить фото</button>
+        </div>
+        <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="moments-section" id="moments">
+        <div class="section-heading">
+          <p class="section-kicker" data-text="momentsKicker">best moments</p>
+          <h2 data-text="momentsTitle">Наши лучшие моменты</h2>
+        </div>
+        <form class="moment-form" id="momentForm">
+          <input id="momentTitle" type="text" placeholder="Название момента" data-placeholder="momentTitlePlaceholder" required />
+          <input id="momentDate" type="text" placeholder="Дата или место" data-placeholder="momentDatePlaceholder" />
+          <label class="moment-photo-button">
+            <span data-text="momentPhotoButton">Фото момента</span>
+            <input id="momentPhoto" type="file" accept="image/*,.heic,.heif" multiple />
+          </label>
+          <button class="button primary" type="submit" data-text="addMomentButton">Добавить</button>
+        </form>
+        <div class="timeline" id="timeline"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p data-text="editorFooter">Это твоя страница редактирования. Для отправки используй “Готовый сайт” или скачай готовую страницу.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

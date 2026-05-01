@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Pink Love Story</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-mode="view">
+    <div class="sparkles" aria-hidden="true"></div>
+    <div class="background-decor" id="backgroundDecor" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Our Pink Love Story">
+        <span class="brand-mark">♡</span>
+        <span data-text="brand">Pink Love</span>
+      </a>
+      <nav class="nav" aria-label="Навигация">
+        <a href="#letter" data-text="navLetter">Письмо</a>
+        <a href="#gallery" data-text="navGallery">Фото</a>
+        <a href="#moments" data-text="navMoments">Моменты</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow" data-text="heroKicker">for the sweetest person</p>
+          <h1>
+            <span data-field="heroTitle">Наша маленькая история любви</span>
+          </h1>
+          <p class="hero-text" data-field="heroText">
+            Здесь будут красивые фото, нежное письмо и наши самые теплые моменты.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#letter" data-text="primaryButton">Открыть письмо</a>
+            <a class="button ghost" href="#gallery" data-text="secondaryButton">Посмотреть фото</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Милый розовый талисман">
+          <div class="mascot-card">
+            <img class="hero-photo" src="./assets/decor/hero-photo.jpg" alt="Наше фото" />
+            <p data-text="mascotCaption">made with love</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="letter-section" id="letter">
+        <div class="section-heading">
+          <p class="section-kicker" data-text="letterKicker">love letter</p>
+          <h2 data-text="letterTitle">Письмо для неё</h2>
+        </div>
+        <div class="letter-card view-letter-card">
+          <article class="letter-preview">
+            <p id="letterPreview"></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="gallery">
+        <div class="section-heading">
+          <p class="section-kicker" data-text="galleryKicker">photo memories</p>
+          <h2 data-text="galleryTitle">Красивые фото</h2>
+        </div>
+        <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="moments-section" id="moments">
+        <div class="section-heading">
+          <p class="section-kicker" data-text="momentsKicker">best moments</p>
+          <h2 data-text="momentsTitle">Наши лучшие моменты</h2>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p data-text="viewFooter">Для самой любимой.</p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
